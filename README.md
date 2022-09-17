@@ -1,6 +1,6 @@
 # Kolour for Kotlin
 
-String class extension functions to help with colouring console output using ANSI escape codes: [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code). Created for students in my coding classes to use.
+String class extension functions to help with colouring terminal / console output using ANSI escape codes: [https://en.wikipedia.org/wiki/ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code). Created for students in my coding classes to use.
 
 Provides functions to specify **foreground** and **background** colours, using...
 - colour **names**
