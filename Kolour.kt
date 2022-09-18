@@ -82,10 +82,9 @@ fun String.bgCol(hex: String): String {
 }
 
 
-/***************************************************************************************
- * Hex string to RGB conversion, either #RRGGBB or #RGB
- */
-fun hexToRgb(hex: String): Triple<Int, Int, Int> {
+// Hex string to RGB conversion, either #RRGGBB or #RGB
+//--------------------------------------------------------------------------------------
+private fun hexToRgb(hex: String): Triple<Int, Int, Int> {
     val fullHex = "#[0-9a-fA-F]{6}".toRegex()
     val shortHex = "#[0-9a-fA-F]{3}".toRegex()
 
@@ -106,10 +105,9 @@ fun hexToRgb(hex: String): Triple<Int, Int, Int> {
 }
 
 
-/***************************************************************************************
- * HSV to RGB conversion, based on https://stackoverflow.com/questions/7896280/
- */
-fun hsvToRgb(hue: Double, saturation: Double, value: Double): Triple<Int, Int, Int> {
+// HSV to RGB conversion, based on https://stackoverflow.com/questions/7896280/
+//--------------------------------------------------------------------------------------
+private fun hsvToRgb(hue: Double, saturation: Double, value: Double): Triple<Int, Int, Int> {
     val hueValid = hue.coerceIn(0.0, 1.0)
     val satValid = saturation.coerceIn(0.0, 1.0)
     val valValid = value.coerceIn(0.0, 1.0)
