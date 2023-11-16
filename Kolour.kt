@@ -1,6 +1,6 @@
 /***************************************************************************************
  * Console Colours for Kotlin
- * Steve Copley 2022
+ * Steve Copley 2022-2023
  * https://github.com/stevecopley/kotlin-kolour
  ***************************************************************************************/
 
@@ -127,4 +127,17 @@ private fun hsvToRgb(hue: Double, saturation: Double, value: Double): Triple<Int
         4 -> Triple(t, p, v)
         else -> Triple(v, p, q)
     }
+}
+
+
+// Function to return length of bare string (with no ESC sequences)
+//--------------------------------------------------------------------------------------
+fun String.length(): Int {
+    // Remove any trailing reset ESC sequences from string
+    var stripped = this.replace("\u001B[0m","")
+    // Regex to strip off any ESC sequences on front of string
+    val regex = "^(?:\u001B\\[.*m)*".toRegex()
+    stripped = stripped.replace(regex,"")
+    // Should now only have the bare text
+    return stripped.length
 }

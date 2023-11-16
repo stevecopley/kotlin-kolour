@@ -100,6 +100,17 @@ Where hex is a String of the fomat "#rrggbb" or "#rgb"
 ![Yellow text on green](images/yelGrn.png)
 
 
+## String.length()
+
+Since the escape sequences used to colour the text add characters to a string, the length of the resulting string is far longer than the visible characters displayed in the terminal.
+
+e.g. ```"Hello".length``` is 5, but ```"Hello".red().bgYellow().length``` is 23!
+
+So a utility function, ```length()``` is provided which will return the length of a string, less any escape sequences
+
+e.g. ```"Hello".red().bgYellow().length()``` correctly returns 5, even though the string with its added escape sequences is far longer.
+
+
 ## Notes
 
 - I haven't bothered with the 'bright' colours as they're rendered so inconsistently by different terminal / IDEs, depending on the config: in some cases the colours are different, others not; sometimes the font is made bold; etc. I've never found the bright colours particularly useful. Easy enough to add them in if you need them.
